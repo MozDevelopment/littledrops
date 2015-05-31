@@ -36,7 +36,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  
     .state('login', {
       url: '/login',
       templateUrl: 'templates/login.html',
@@ -93,24 +92,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
-  //$urlRouterProvider.otherwise('/tab/dash');
 
-    var translations = {
-      "en": {
-        "hello_message": "hello",
-        "goodbye_message": "Goodbye"
-      },
-      "es": {
-        "hello_message": "Hola",
-        "goodbye_message": "Adios"
-      }
-    }
-
-    for(lang in translations){
-      $translateProvider.translations(lang, translations[lang]);
-    }
+   $translateProvider.useStaticFilesLoader({
+    prefix: '/js/i18n/locale_',
+    suffix: '.json'
+  });
 
   $translateProvider.preferredLanguage("es");
   $translateProvider.fallbackLanguage("en");
   $translateProvider.useSanitizeValueStrategy('escaped');
+  //$translateProvider.useLocalStorage();
 });

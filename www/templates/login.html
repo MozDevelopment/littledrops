@@ -1,15 +1,16 @@
 <ion-view view-title="Little Drops" name="login-view">
   <ion-content class="padding">
       <div class="list list-inset">
-      		<h1>{{"hello_message" | translate}}</h1>
-      		<h2>{{"goodbye_message" | translate}}</h2>
           <label class="item item-input">
-              <input type="text" placeholder="Username" ng-model="data.username">
+              <input type="text" placeholder='{{"Username" | translate}}' ng-model="data.username">
           </label>
           <label class="item item-input">
-              <input type="password" placeholder="Password" ng-model="data.password">
+              <input type="password" placeholder='{{"Password" | translate}}' ng-model="data.password">
           </label>
       </div>
-      <button class="button button-block button-assertive" ng-click="login()">Login</button>
+      <button class="button button-block button-assertive" ng-click="login()">{{"Login" | translate}}</button>
+      <button class="button button-block button-clear button-stable">
+        {{"forgot_password" | translate}}
+      </button>
   </ion-content>
 </ion-view>
